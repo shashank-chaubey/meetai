@@ -49,7 +49,7 @@ export const useConfirm = (
 
                 <Button
                     onClick={handleConfirm}
-                    className="w-full lg-auto"
+                    className="w-full lg:w-auto"
                 >
                     Confirm
                 </Button>
