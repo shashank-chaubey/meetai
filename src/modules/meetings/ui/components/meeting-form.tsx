@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from 'zod'; 
 import { useTRPC } from "@/trpc/client";
 import { MeetingGetOne } from "../../types";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
