@@ -15,6 +15,8 @@ import { MeetingGetOne } from "../../types"
 import { format } from "date-fns";
 import { Badge } from "@/components/ui/badge";
 import { formatDuration } from "@/lib/utils";
+import { Transcript } from "./transcript";
+import { ChatProvider } from "./chat-provider";
 
 interface Props {
     data: MeetingGetOne;
@@ -68,6 +70,16 @@ export const CompletedState = ({ data }: Props) => {
                         <ScrollBar orientation="horizontal"/>
                     </ScrollArea>
                 </div>
+                
+
+                <TabsContent value="chat">
+                    <ChatProvider meetingId={data.id} meetingName={data.name} />
+                </TabsContent>
+
+                <TabsContent value="transcript">
+                    <Transcript meetingId={data.id} />
+                </TabsContent>
+                 
                 <TabsContent value="recording">
                     <div className="bg-white rounded-lg border px-4 py-5">
                         <video 
@@ -113,13 +125,13 @@ export const CompletedState = ({ data }: Props) => {
                                             <h1 className="text-2xl font-medium mb-6" {...props} />
                                         ),
                                         h2: (props) => (
-                                            <h1 className="text-xl font-medium mb-6" {...props} />
+                                            <h2 className="text-xl font-medium mb-6" {...props} />
                                         ),
                                         h3: (props) => (
-                                            <h1 className="text-lg font-medium mb-6" {...props} />
+                                            <h3 className="text-lg font-medium mb-6" {...props} />
                                         ),
                                         h4: (props) => (
-                                            <h1 className="text-base font-medium mb-6" {...props} />
+                                            <h4 className="text-base font-medium mb-6" {...props} />
                                         ),
                                         p: (props) => (
                                             <p className="mb-6 leading-relaxed" {...props} />
