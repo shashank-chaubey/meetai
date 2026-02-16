@@ -13,7 +13,7 @@ interface Props {
     }>;
     onSelect: (value: string) => void;
     onSearch?: (value: string) => void;
-    value: string;
+    value?: string;
     placeholder?: string;
     isSearchable?: boolean;
     className?: string
